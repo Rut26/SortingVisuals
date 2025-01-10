@@ -18,7 +18,7 @@ class DrawInformation:
         (89, 33, 36)
     ]
 
-    FONT = pygame.font.SysFont('BebasNeue-Regular', 12)  # Even smaller font size
+    FONT = pygame.font.SysFont('BebasNeue-Regular', 12) 
     LARGE_FONT = pygame.font.SysFont('AREEIRO DEMO', 30)
 
     SIDE_PAD = 100
@@ -80,7 +80,6 @@ def draw_list(draw_info, color_positions={}, clear_bg=False):
 
         pygame.draw.rect(draw_info.window, color, (x, y, draw_info.block_width, draw_info.height))
         
-        # Add the number on the rectangle
         number_text = draw_info.FONT.render(str(val), 1, draw_info.BLACK)
         draw_info.window.blit(number_text, (x + draw_info.block_width / 2 - number_text.get_width() / 2, y - number_text.get_height()))
 
@@ -108,7 +107,7 @@ def bubble_sort(draw_info, ascending=True):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
                 draw_list(draw_info, {j: draw_info.GREEN, j + 1: draw_info.RED}, True)
                 yield True
-                pygame.time.delay(30)  # Shorter delay for smoother animation
+                pygame.time.delay(30) 
 
     return lst
 
@@ -130,7 +129,7 @@ def insertion_sort(draw_info, ascending=True):
             lst[i] = current
             draw_list(draw_info, {i - 1: draw_info.GREEN, i: draw_info.RED}, True)
             yield True
-            pygame.time.delay(30)  # Shorter delay for smoother animation
+            pygame.time.delay(30)  
 
     return lst
 
